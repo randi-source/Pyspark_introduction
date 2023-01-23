@@ -1,6 +1,6 @@
 # Introduction to PySpark
 
-## How to Install in ubuntu
+## How to Install PySpark in Ubuntu
 
 ### Prerequisite:
 * Operation system used: Ubuntu 20.04.01 LTS
