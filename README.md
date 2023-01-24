@@ -5,7 +5,7 @@
 ### Prerequisite:
 * Operation system used: Ubuntu 20.04.01 LTS
 * Have Anaconda IDE installed, if not, follow this instruction for debian [here](https://docs.anaconda.com/anaconda/install/linux/).
-
+<br><br/>
 1. Create and activate new Anaconda Environment 
 ```console
 conda create -n pyspark_env python=3.9.12
@@ -47,6 +47,25 @@ source ~/.bash_profile
 ```console
 pyspark
 ```
+8. Eliminate the warn messages when launcing spark by going to your spark installation and edit the configuration files
+```console
+cd <path to extracted tar file>/spark-3.3.1-bin-hadoop3/conf/
+```
+```console
+mv spark-env.sh.template spark-env.sh
+```
+```console
+vi spark-env.sh
+```
+add this config to your spark-env.sh
+```console
+SPARK_LOCAL_IP="<your IP address>"
+```
+after that, try to relaunch pyspark
+```console
+pyspark
+```
+
 ## Additional Implementation
 if you want to use jupyter notebook in VSCode as I am using one,
 
@@ -55,18 +74,18 @@ if you want to use jupyter notebook in VSCode as I am using one,
 * Have installed Jupyter Notebook in VSCode, if not, follow the instruction [here](https://towardsdatascience.com/installing-jupyter-notebook-support-in-visual-studio-code-91887d644c5d). 
 note: use incognito mode in chrome browser and even thou the instruction were for windows, it will be the same for Ubuntu.
 
-8. Open new folder in vscode
+9. Open new folder in vscode
 
-9. Create files in it (ex: test.pynb) and open the file
+10. Create files in it (ex: test.pynb) and open the file
 
-10. Change the kernel to pyspark_env. At first, you will prompted to install the kernel with pop up message in VSCode, after that, you ccould use the kernel.
+11. Change the kernel to pyspark_env. At first, you will prompted to install the kernel with pop up message in VSCode, after that, you ccould use the kernel.
 
-11. Install pyspark in jupyter notebook cell
+12. Install pyspark in jupyter notebook cell
 ```python
 !pip install pyspark==3.3.1
 ```
 
-12. Test your PySpark installation in Jupyter Notebook
+13. Test your PySpark installation in Jupyter Notebook
 ```python
 import pyspark
 from pyspark.sql import SparkSession
